@@ -4,12 +4,14 @@ namespace StockAccountManagement
 {
     class Program
     {
+        public static object JsonConvert { get; private set; }
+
         static void Main(string[] args)
         {
             FetchJson fetchJson = new FetchJson();
             Stock data = fetchJson.Read("C:/Json/Stock.json");
 
-            Console.WriteLine(JsonConvert.SerializeObject(data));
+            Console.WriteLine(JsonConvert);
 
             Console.WriteLine("------------------------STOCK REPORT--------------------------");
             for (int i = 0; i < data.Stock1.Count; i++)
